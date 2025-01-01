@@ -1,0 +1,16 @@
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+import time
+import os
+import csv
+import random
+
+chrome_driver_path = os.path.join(os.getcwd(), 'Drivers', 'chromedriver.exe')
+chrome_service = Service(chrome_driver_path)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option('debuggerAddress', 'localhost:9233')
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
